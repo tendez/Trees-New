@@ -1,0 +1,96 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="Trees.Views.MojaSprzedazPage">
+
+    <ScrollView>
+        <StackLayout Padding="15">
+
+            <!-- DataSprzedazyPicker -->
+            <DatePicker x:Name="DataSprzedazyPicker"
+                        Date="{x:Static sys:DateTime.Now}"
+                        DateSelected="OnDateSelected"
+                        FontSize="Medium"
+                        HorizontalOptions="FillAndExpand" />
+
+            <!-- TotalSprzedazLabel -->
+            <Label x:Name="TotalSprzedazLabel"
+                   Text="Ladowanie sumy sprzedazy..."
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   Margin="0,10,0,20" />
+
+            <!-- SprzedazCollectionView -->
+            <CollectionView x:Name="SprzedazCollectionView"
+                            ItemsLayout="VerticalList"
+                            Margin="0,0,0,20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="5"
+                               Padding="10"
+                               BorderColor="LightGray"
+                               CornerRadius="10"
+                               BackgroundColor="White"
+                               HasShadow="True">
+                            <StackLayout Spacing="8">
+
+                                <!-- NazwaGatunku -->
+                                <Label Text="{Binding NazwaGatunku, StringFormat=' {0}'}"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+
+                                <!-- OpisWielkosci -->
+                                <Label Text="{Binding OpisWielkosci, StringFormat=' {0}'}"
+                                       FontSize="Small"
+                                       TextColor="Gray" />
+
+                                <!-- Cena -->
+                                <Label Text="{Binding Cena, StringFormat=' {0} PLN'}"
+                                       FontSize="Small"
+                                       TextColor="DarkGreen" />
+
+                                <!-- DataSprzedazy -->
+                                <Label Text="{Binding DataSprzedazy, StringFormat=' {0:d}'}"
+                                       FontSize="Small"
+                                       TextColor="Black" />
+
+                                <!-- Login -->
+                                <Label Text="{Binding Login, StringFormat=' {0}'}"
+                                       FontSize="Small"
+                                       TextColor="DarkGray" />
+
+                                <!-- Buttons -->
+                                <Grid ColumnDefinitions="*,*"
+                                      RowDefinitions="Auto">
+                                    <Button Text="Edytuj"
+                                            BackgroundColor="LightSkyBlue"
+                                            TextColor="White"
+                                            Clicked="OnEditClicked"
+                                            CommandParameter="{Binding .}"
+                                            Margin="0,5,5,0"
+                                            CornerRadius="5"
+                                            HeightRequest="35" />
+                                    <Button Text="Usun"
+                                            BackgroundColor="Tomato"
+                                            TextColor="White"
+                                            Clicked="OnDeleteClicked"
+                                            CommandParameter="{Binding .}"
+                                            Margin="5,5,0,0"
+                                            CornerRadius="5"
+                                            HeightRequest="35"
+                                            Grid.Column="1" />
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

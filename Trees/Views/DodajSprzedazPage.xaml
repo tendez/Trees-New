@@ -1,0 +1,34 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.DodajSprzedazPage">
+    <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <CollectionView x:Name="GatunekCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnGatunekSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="20" BackgroundColor="LightGray" Margin="0,0,0,5">
+                            <Label Text="{Binding NazwaGatunku}"
+                               FontSize="25"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" />
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Dalej"
+                x:Name="DalejButton"
+                IsEnabled="False"
+                Clicked="OnDalejClicked"
+                VerticalOptions="End"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#3498db"
+                TextColor="White"
+                FontSize="Medium"
+                HeightRequest="80"
+                CornerRadius="10" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

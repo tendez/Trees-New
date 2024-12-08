@@ -1,0 +1,44 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.DodajCenePage">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand">
+
+            <Label Text="Cena:"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#2c3e50"
+                   HorizontalOptions="Start" />
+
+            <Entry x:Name="CenaEntry"
+                   Keyboard="Numeric"
+                   Placeholder="Wpisz cene"
+                   FontSize="Medium"
+                   TextColor="#2c3e50"
+                   BackgroundColor="White"
+                   HeightRequest="40"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="FillAndExpand" />
+
+            <Label x:Name="warning"
+                   Text="Mozna wpisywac tylko cyfry"
+                   IsVisible="False"
+                   TextColor="Red"
+                   FontSize="Small"
+                   FontAttributes="Italic"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Dodaj Sprzedaz"
+                    Clicked="OnDodajSprzedazClicked"
+                    BackgroundColor="#3498db"
+                    TextColor="White"
+                    FontSize="Medium"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand" />
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

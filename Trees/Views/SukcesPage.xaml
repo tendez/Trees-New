@@ -1,0 +1,33 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.SukcesPage">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+
+        <Label Text="Sprzedaz zakonczona sukcesem!"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Green"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Button Text="Dodaj kolejna sprzedaz"
+                Clicked="OnDodajKolejnaSprzedazClicked"
+                BackgroundColor="#3498db"
+                TextColor="White"
+                FontSize="Medium"
+                HeightRequest="50"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand" />
+
+        <Button Text="Zobacz sprzedaz"
+                Clicked="OnZobaczSprzedazClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                FontSize="Medium"
+                HeightRequest="50"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand" />
+
+    </StackLayout>
+</ContentPage>

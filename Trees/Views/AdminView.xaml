@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.AdminView">
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
+        <Label Text="Panel Administratora" FontSize="24" HorizontalOptions="Center" />
+
+        <Button Text="Zwroty" Clicked="OnZwrotyClicked"
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Statystyki" Clicked="OnStatystykiClicked"
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Magazyn" Clicked="OnMagazynClicked"
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentPage>

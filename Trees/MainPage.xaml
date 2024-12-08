@@ -1,0 +1,22 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.MainPage">
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
+        <Label Text="Nazwa Twojego Stoiska" FontSize="24" HorizontalOptions="Center" IsVisible="false" x:Name="NazwaStoiskaLabel"/>
+
+        <Button Text="Wybierz stoisko" Clicked="OnWybierzStoiskoClicked" IsVisible="true" x:Name="WybierzStoiskoButton" 
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Dodaj sprzedaż" Clicked="OnDodajSprzedazClicked" IsVisible="true" x:Name="DodajSprzedazButton" 
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Zobacz Moja Sprzedaż" Clicked="OnZobaczMojaSprzedazClicked" IsVisible="true" x:Name="ZobaczMojaSprzedazButton" 
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Zobacz Sprzedaż Stoiska" Clicked="OnZobaczSprzedazStoiskaClicked" IsVisible="true" x:Name="ZobaczSprzedazStoiskaButton" 
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+
+        <Button Text="Wyloguj się" Clicked="OnLogoutButtonClicked" IsVisible="true" x:Name="LogoutButton" 
+                BackgroundColor="#3498db" TextColor="White" HeightRequest="80" VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentPage>

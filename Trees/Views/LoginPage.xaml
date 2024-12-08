@@ -1,0 +1,65 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.LoginPage"
+             Title="Logowanie">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand">
+
+            <Label Text="Nazwa uzytkownika"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#2c3e50"
+                   HorizontalOptions="Start" />
+            <Entry x:Name="UsernameEntry"
+       Placeholder="Wprowadz nazwe uzytkownika"
+       AutomationId="username"
+       SemanticProperties.Description="Username"
+       FontSize="Medium"
+       TextColor="#2c3e50"
+       BackgroundColor="White"
+       HeightRequest="40"
+       Margin="0,0,0,10"
+       HorizontalOptions="FillAndExpand" />
+
+            <Label Text="Haslo"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#2c3e50"
+                   HorizontalOptions="Start" />
+            <Entry x:Name="PasswordEntry"
+       IsPassword="True"
+       Placeholder="Wprowadz haslo"
+       AutomationId="password"
+       SemanticProperties.Description="Password"
+       FontSize="Medium"
+       TextColor="#2c3e50"
+       BackgroundColor="White"
+       HeightRequest="40"
+       Margin="0,0,0,10"
+       HorizontalOptions="FillAndExpand" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="5">
+                <CheckBox x:Name="ShowPasswordCheckBox" IsChecked="False" CheckedChanged="OnShowPasswordCheckBoxChanged"/>
+                <Label Text="Pokaz haslo" VerticalOptions="Center" FontSize="Small" />
+            </StackLayout>
+
+            <Label x:Name="LoginStatusLabel"
+                   Text=""
+                   TextColor="Red"
+                   FontSize="Small"
+                   HorizontalOptions="Center"
+                   Margin="0,5,0,10" />
+
+            <Button Text="Zaloguj sie"
+                    Clicked="OnLoginButtonClicked"
+                    BackgroundColor="#3498db"
+                    TextColor="White"
+                    FontSize="Medium"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand" />
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

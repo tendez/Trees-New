@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trees.Views.WyborWielkosciPage">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <!-- CollectionView z lista wielkosci -->
+            <CollectionView x:Name="WielkoscCollectionView"
+                            SelectionMode="Single"  
+                            SelectionChanged="OnWielkoscSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="20" BackgroundColor="LightGray" Margin="0,0,0,10">
+                            <Label Text="{Binding OpisWielkosci}"
+                                   FontSize="24"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="StartAndExpand" />
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Przycisk Dalej -->
+            <Button Text="Dalej"
+                    x:Name="DalejButton"
+                    IsEnabled="False"
+                    Clicked="OnDalejClicked"
+                    BackgroundColor="#3498db"
+                    TextColor="White"
+                    FontSize="Medium"
+                    HeightRequest="80"
+                    CornerRadius="10"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
