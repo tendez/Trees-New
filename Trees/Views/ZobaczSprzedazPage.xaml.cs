@@ -53,36 +53,7 @@ namespace Trees.Views
             base.OnAppearing();
             LoadSprzedaz(_stoisko, DateTime.Now);
         }
-        private async void OnEditClicked(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            Sprzedaz? sprzedaz = button?.CommandParameter as Sprzedaz;
-
-            if (sprzedaz != null)
-            {
-
-
-                await Navigation.PushAsync(new EdytujSprzedazPage(sprzedaz));
-            }
-        }
-
-        private async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            Sprzedaz? sprzedaz = button?.CommandParameter as Sprzedaz;
-
-            if (sprzedaz != null)
-            {
-                var confirm = await DisplayAlert("Usun", "Czy na pewno chcesz usunac ten wpis?", "Tak", "Nie");
-                if (confirm)
-                {
-
-                    await _databaseService.DeleteSprzedazAsync(sprzedaz.SprzedazID);
-                    await DisplayAlert("Usunieto", "Wpis zostal usuniety.", "OK");
-                    LoadSprzedaz(_stoisko, DateTime.Now);
-                }
-            }
-        }
+     
         private void OnDateSelected(object sender, DateChangedEventArgs e)
         {
             LoadSprzedaz(_stoisko, e.NewDate);
